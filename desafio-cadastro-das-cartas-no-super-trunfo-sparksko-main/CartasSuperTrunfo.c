@@ -88,16 +88,16 @@ int main()
 
     //Calcular os valores da densidade e pib per capita antes da exibição
 
-       densidade1 = populacao1 / area1;
+       densidade1 = (float)populacao1 / area1;
        pibpercapita1 = (pib1 * 1000000000) / populacao1;
 
-       densidade2 = populacao2 / area2;
+       densidade2 = (float)populacao2 / area2;
        pibpercapita2 = (pib2 * 1000000000) / populacao2;
 
 
          // Super Poder
-    superPoder1 = (float)populacao1 + area1 + (float)pib1 + pontosTuristicos1 + pibpercapita1 + (1.0f / densidade1);
-    superPoder2 = (float)populacao2 + area2 + (float)pib2 + pontosTuristicos2 + pibpercapita2 + (1.0f / densidade2);
+    superPoder1 = (float)populacao1 + area1 + (pib1 * 1000000000.0f) + pontosTuristicos1 + pibpercapita1 + (1.0f / densidade1);
+    superPoder2 = (float)populacao2 + area2 + (pib2 * 1000000000.0f) + pontosTuristicos2 + pibpercapita2 + (1.0f / densidade2);
 
     // Exibir cartas
     printf("\nCarta 1:\nEstado: %c\nCódigo: %s\nCidade: %s\nPopulação: %lu\nÁrea: %.2f km²\nPIB: %.2f bilhões\nPontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f reais\nSuper Poder: %.2f\n",
@@ -120,14 +120,13 @@ int main()
     // Comparações
     
     printf("\nResultados das Comparações:\n");
-    printf("População: Carta %d ganhou (%d)\n", resultadoPopulacao ? 1 : 2, resultadoPopulacao);
-    printf("Área: Carta %d ganhou (%d)\n", resultadoArea ? 1 : 2, resultadoArea);
-    printf("PIB: Carta %d ganhou (%d)\n", resultadoPib ? 1 : 2, resultadoPib);
-    printf("Pontos Turísticos: Carta %d ganhou (%d)\n", resultadoPontosTuristicos ? 1 : 2, resultadoPontosTuristicos);
-    printf("PIB per Capita: Carta %d ganhou (%d)\n", resultadoPibPerCapita ? 1 : 2, resultadoPibPerCapita);
-    printf("Super Poder: Carta %d ganhou (%d)\n", resultadoSuperPoder ? 1 : 2, resultadoSuperPoder);
+    printf("População: %d \n", resultadoPopulacao);
+    printf("Área: %d \n", resultadoArea);
+    printf("PIB: %d \n", resultadoPib);
+    printf("Pontos Turísticos: %d \n", resultadoPontosTuristicos);
+    printf("PIB per Capita: %d \n", resultadoPibPerCapita);
+    printf("Super Poder:  %d \n", resultadoSuperPoder);
 
     return 0;
+
 }
-
-
